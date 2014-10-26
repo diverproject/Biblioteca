@@ -7,18 +7,27 @@
 	if (filepage != null)
 		filename = filepage;
 
-	String message = request.getAttribute("error") != null ? "<div class=\"danger alert\">" +request.getAttribute("error")+ "</div>" : 
-					request.getAttribute("success") != null ? "<div class=\"success alert\">" +request.getAttribute("success")+ "</div>" :
-					request.getAttribute("instanceof") != null ? "<div class=\"info alert\">" +request.getAttribute("instanceof")+ "</div>" : "";
+	String message = request.getAttribute("error") != null ? "<div class=\"danger alert\">Erro: " +request.getAttribute("error")+ ".</div>" : 
+					request.getAttribute("exception") != null ? "<div class=\"danger alert\">Exception: " +request.getAttribute("exception")+ ".</div>" : 
+					request.getAttribute("success") != null ? "<div class=\"success alert\">Sucesso: " +request.getAttribute("success")+ ".</div>" :
+					request.getAttribute("instanceof") != null ? "<div class=\"info alert\">Informação: " +request.getAttribute("instanceof")+ ".</div>" : "";
 %>
 <html>
 <head>
 	<jsp:include page="header.jsp"/>
 </head>
 <body>
+
 	<jsp:include page="banner.jsp"/>
-	<%= message %>
-	<% pageContext.include("WEB-INF/pages/" +filename+ ".jsp"); %>
-	<jsp:include page="rodape.jsp"/>
+
+	<div class="container">
+		<%= message %>
+		<% pageContext.include("WEB-INF/pages/" +filename+ ".jsp"); %>
+	</div>
+
+	<div class="container">
+		<jsp:include page="rodape.jsp"/>
+	</div>
+
 </body>
 </html>

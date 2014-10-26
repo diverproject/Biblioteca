@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,11 +14,10 @@ import javax.servlet.http.HttpSession;
 import localhost.biblioteca.core.Mysql;
 import localhost.biblioteca.core.Sql;
 
-@SuppressWarnings("serial")
-public class Login extends HttpServlet
+public class Login implements ServletPost
 {
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	public void post(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		try {
 
@@ -29,7 +27,7 @@ public class Login extends HttpServlet
 			if (connection == null)
 			{
 				request.setAttribute("error", "falha na conexão com o banco de dados");
-				request.getRequestDispatcher("biblioteca").forward(request, response);
+				request.getRequestDispatcher("?page=login").forward(request, response);
 				return;
 			}
 
@@ -55,17 +53,21 @@ public class Login extends HttpServlet
 				session.setAttribute("sex", rs.getString("sex").equals("F") ? false : true);
 
 				request.setAttribute("success", "acesso efetuado com êxito");
-				request.getRequestDispatcher("biblioteca/?page=perfil").forward(request, response);
+				request.getRequestDispatcher("?page=perfil").forward(request, response);
 			}
 
 			else
 			{
 				request.setAttribute("error", "usuário ou senha incorreta");
-				request.getRequestDispatcher("biblioteca").forward(request, response);
+				request.getRequestDispatcher("?page=login").forward(request, response);
 			}
 
-		} catch (ClassNotFoundException | SQLException e) {
-			System.out.println(e.getMessage());
+		} catch (ClassNotFoundException e) {
+			request.setAttribute("exception", String.format("ClassNotFoundException (%s)", e.getMessage()));
+			request.getRequestDispatcher("?page=login").forward(request, response);
+		} catch (SQLException e) {
+			request.setAttribute("exception", String.format("SQLException (%s)", e.getMessage()));
+			request.getRequestDispatcher("?page=login").forward(request, response);
 		}
 	}
 }

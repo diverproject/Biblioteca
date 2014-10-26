@@ -13,19 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ControlServlet extends HttpServlet
 {
 	@Override
-	public void service(HttpServletRequest request, HttpServletResponse response)
-	{
-		
-	}
-
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		String action = request.getParameter("action");
 		String classname = String.format("localhost.biblioteca.servlets.%s", action);
@@ -35,18 +23,18 @@ public class ControlServlet extends HttpServlet
 			Class<?> c = Class.forName(classname);
 			Object object = c.newInstance();
 
-			if (object instanceof HttpServlet)
+			if (object instanceof ServletPost)
 			{
-				((HttpServlet) object).service(request, response);
+				((ServletPost) object).post(request, response);
 				return;
 			}
 
-			request.setAttribute("instanceof", classname);
+			request.setAttribute("instanceof", String.format("classe não é um ServletPost (%s)", classname));
 
 		} catch (Exception e) {
-			request.setAttribute("exception", e.getMessage());
+			request.setAttribute("exception", String.format("classe não encontrada (%s)", e.getMessage()));
 		} 
 
-		request.getRequestDispatcher("biblioteca/notfound").forward(request, response);
+		request.getRequestDispatcher("?page=notfound").forward(request, response);
 	}
 }

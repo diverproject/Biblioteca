@@ -1,5 +1,4 @@
-<div class="container">
-	<form class="formdmd aligned" action="/Control" method="post">
+	<form class="formdmd aligned" action="Control" method="post">
 		<fieldset>
 			<legend>Painel de Acesso</legend>
 			<ul>
@@ -13,8 +12,8 @@
 				</li>
 				<li class="group center">
 					<input class="btn primary" type="submit" value="Acessar"/>
+					<input type="hidden" name="action" value="Login"/>
 				</li>
 			</ul>
 		</fieldset>
 	</form>
-</div>
