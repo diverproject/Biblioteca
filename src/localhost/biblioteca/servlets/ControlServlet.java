@@ -1,4 +1,4 @@
-package localhost.biblioteca.servlets;
+Ôªøpackage localhost.biblioteca.servlets;
 
 import java.io.IOException;
 
@@ -29,10 +29,10 @@ public class ControlServlet extends HttpServlet
 				return;
 			}
 
-			request.setAttribute("instanceof", String.format("classe n„o È um ServletPost (%s)", classname));
+			request.setAttribute("instanceof", String.format("classe n√£o √© um ServletPost (%s)", classname));
 
 		} catch (Exception e) {
-			request.setAttribute("exception", String.format("classe n„o encontrada (%s)", e.getMessage()));
+			request.setAttribute("exception", String.format("classe n√£o encontrada (%s)", e.getMessage()));
 		} 
 
 		request.getRequestDispatcher("?page=notfound").forward(request, response);

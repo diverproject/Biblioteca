@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+ï»¿<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 	String filename = "inicio";
@@ -10,7 +10,7 @@
 	String message = request.getAttribute("error") != null ? "<div class=\"danger alert\">Erro: " +request.getAttribute("error")+ ".</div>" : 
 					request.getAttribute("exception") != null ? "<div class=\"danger alert\">Exception: " +request.getAttribute("exception")+ ".</div>" : 
 					request.getAttribute("success") != null ? "<div class=\"success alert\">Sucesso: " +request.getAttribute("success")+ ".</div>" :
-					request.getAttribute("instanceof") != null ? "<div class=\"info alert\">Informação: " +request.getAttribute("instanceof")+ ".</div>" : "";
+					request.getAttribute("instanceof") != null ? "<div class=\"info alert\">InformaÃ§Ã£o: " +request.getAttribute("instanceof")+ ".</div>" : "";
 %>
 <html>
 <head>

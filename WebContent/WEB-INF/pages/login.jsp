@@ -1,9 +1,9 @@
-	<form class="formdmd aligned" action="Control" method="post">
+﻿	<form class="formdmd aligned" action="Control" method="post">
 		<fieldset>
 			<legend>Painel de Acesso</legend>
 			<ul>
 				<li class="group">
-					<label>Usu�rio</label>
+					<label>Usuário</label>
 					<input type="text" maxlength="24" name="username"/>
 				</li>
 				<li class="group">

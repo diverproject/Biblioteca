@@ -1,4 +1,4 @@
-<table class="rodape">
+ï»¿<table class="rodape">
 	<tr>
 		<td width="30%">
 			<p class="center">
@@ -14,8 +14,8 @@
 				<b>Trabalho</b><br>
 				<br>
 				Fatec Zona Leste<br>
-				ADS 5º 2014/2<br>
-				Laboratório de Engenharia de Software
+				ADS 5Âº 2014/2<br>
+				LaboratÃ³rio de Engenharia de Software
 			</p>
 		</td>
 		<td width="30%">

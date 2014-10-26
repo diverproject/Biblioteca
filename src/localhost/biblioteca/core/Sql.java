@@ -1,4 +1,4 @@
-package localhost.biblioteca.core;
+﻿package localhost.biblioteca.core;
 
 import java.sql.Connection;
 import java.sql.SQLException;

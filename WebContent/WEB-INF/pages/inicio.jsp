@@ -1,8 +1,8 @@
-<p>Website desenvolvido para permitir o gerenciamento de uma Biblioteca.
+Ôªø<p>Website desenvolvido para permitir o gerenciamento de uma Biblioteca.
 O Gerenciamento consiste em incluir, alterar e monitorar diversos tipos de entidades,
-tais como usu·rios, editoras, obras, emprÈstimos e reservas dentre outros.</p>
+tais como usu√°rios, editoras, obras, empr√©stimos e reservas dentre outros.</p>
 
-<p>A conex„o È feita atravÈs do banco de dados MySQL, o servidor È o Apache Tomcat 8.0.14.
-Utilizando a linguagem Java com Servlets. Designe b·sico, validaÁ„o de usu·rios e verificaÁ„o
-de usu·rio acessado para permitir determinadas tarefas, e outras com verificaÁ„o do nÌvel
+<p>A conex√£o √© feita atrav√©s do banco de dados MySQL, o servidor √© o Apache Tomcat 8.0.14.
+Utilizando a linguagem Java com Servlets. Designe b√°sico, valida√ß√£o de usu√°rios e verifica√ß√£o
+de usu√°rio acessado para permitir determinadas tarefas, e outras com verifica√ß√£o do n√≠vel
 de acesso da conta (utilizado para contas de gerentes/moderadores).</p>

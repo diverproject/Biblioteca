@@ -1,4 +1,4 @@
-package localhost.biblioteca.entidades;
+﻿package localhost.biblioteca.entidades;
 
 public class AlunoEtec extends Aluno
 {

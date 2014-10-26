@@ -1,4 +1,4 @@
-package localhost.biblioteca.servlets;
+ï»¿package localhost.biblioteca.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -26,7 +26,7 @@ public class Login implements ServletPost
 
 			if (connection == null)
 			{
-				request.setAttribute("error", "falha na conexão com o banco de dados");
+				request.setAttribute("error", "falha na conexÃ£o com o banco de dados");
 				request.getRequestDispatcher("?page=login").forward(request, response);
 				return;
 			}
@@ -52,13 +52,13 @@ public class Login implements ServletPost
 				session.setAttribute("lastname", rs.getString("lastname"));
 				session.setAttribute("sex", rs.getString("sex").equals("F") ? false : true);
 
-				request.setAttribute("success", "acesso efetuado com êxito");
+				request.setAttribute("success", "acesso efetuado com Ãªxito");
 				request.getRequestDispatcher("?page=perfil").forward(request, response);
 			}
 
 			else
 			{
-				request.setAttribute("error", "usuário ou senha incorreta");
+				request.setAttribute("error", "usuÃ¡rio ou senha incorreta");
 				request.getRequestDispatcher("?page=login").forward(request, response);
 			}
 
