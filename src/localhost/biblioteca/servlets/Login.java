@@ -33,7 +33,7 @@ public class Login implements ServletPost
 
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
-			String query = "SELECT id, level, name, lastname, sex FROM usuarios WHERE username = ? AND password = ?";
+			String query = "SELECT id, acesso, nome, sexo FROM usuarios WHERE usuario = ? AND senha = ?";
 
 			PreparedStatement ps = connection.prepareStatement(query);
 			ps.setString(1, username);
@@ -45,12 +45,11 @@ public class Login implements ServletPost
 			{
 				HttpSession session = request.getSession();
 				session.setAttribute("id", rs.getInt("id"));
-				session.setAttribute("level", rs.getInt("level"));
-				session.setAttribute("username", username);
-				session.setAttribute("password", password);
-				session.setAttribute("name", rs.getString("name"));
-				session.setAttribute("lastname", rs.getString("lastname"));
-				session.setAttribute("sex", rs.getString("sex").equals("F") ? false : true);
+				session.setAttribute("acesso", rs.getInt("acesso"));
+				session.setAttribute("usuario", username);
+				session.setAttribute("senha", password);
+				session.setAttribute("nome", rs.getString("nome"));
+				session.setAttribute("sexo", rs.getString("sexo").equals("F") ? false : true);
 
 				request.setAttribute("success", "acesso efetuado com êxito");
 				request.getRequestDispatcher("?page=perfil").forward(request, response);
