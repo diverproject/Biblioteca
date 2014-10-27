@@ -293,4 +293,40 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 			return true;
 		}
 	}
+
+	public boolean login(Usuario usuario)
+	{
+		try {
+
+			Sql sql = new Mysql();
+			Connection connection = sql.getConnection();
+
+			String query = "SELECT id, nome, acesso, sexo FROM usuarios WHERE usuario = ? AND senha = ?";
+
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setString(1, usuario.getUsuario());
+			ps.setString(2, usuario.getSenha());
+
+			ResultSet result = ps.executeQuery();
+
+			if (result.next())
+			{
+				usuario.setId(result.getInt("id"));
+				usuario.setNome(result.getString("nome"));
+				usuario.setAcesso(result.getInt("acesso"));
+				usuario.setSexo(result.getString("sexo"));
+
+				return true;
+			}
+
+			return false;
+
+		} catch (SQLException e) {
+			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
+			return true;
+		} catch (ClassNotFoundException e) {
+			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
+			return true;
+		}
+	}
 }

@@ -4,7 +4,7 @@
 <%
 
 	boolean logged = false;
-	Object tlogged = (String) request.getSession().getAttribute("logged");
+	Object tlogged = request.getSession().getAttribute("logged");
 
 	if (tlogged instanceof Boolean && (boolean) tlogged)
 		logged = true;
@@ -90,3 +90,10 @@
 	</ul>
 </div>
 <!-- Fim da barra de menu -->
+
+<% if (logged) { %>
+<div class="container center">
+	<%= String.format("Seja bem-vind%s %s, ao SGB.", session.getAttribute("sexo").equals("F") ? "a" : "o", session.getAttribute("nome")) %>
+	<a href="Logout">Clique aqui para efetuar sair da conta.</a>
+</div>
+<% } %>
