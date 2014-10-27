@@ -2,7 +2,7 @@
 
 public class Editora
 {
-	private int codigo;
+	private int id;
 	private String nome;
 	private String logradouro;
 	private String numero;
@@ -14,14 +14,14 @@ public class Editora
 	private String telefone;
 	private String email;
 
-	public int getCodigo()
+	public int getId()
 	{
-		return codigo;
+		return id;
 	}
 
-	public Editora setCodigo(int codigo)
+	public Editora setId(int id)
 	{
-		this.codigo = codigo;
+		this.id = id;
 		return this;
 	}
 

@@ -187,6 +187,53 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 	}
 
 	@Override
+	public boolean remover(Usuario usuario)
+	{
+		try {
+
+			Sql sql = new Mysql();
+			Connection connection = sql.getConnection();
+
+			String query = "DELETE FROM usuarios WHERE id = ?";
+
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setInt(1, usuario.getId());
+
+			return ps.executeUpdate() != PreparedStatement.EXECUTE_FAILED;
+
+		} catch (SQLException e) {
+			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
+			return false;
+		} catch (ClassNotFoundException e) {
+			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
+			return false;
+		}
+	}
+
+	@Override
+	public boolean truncar()
+	{
+		try {
+
+			Sql sql = new Mysql();
+			Connection connection = sql.getConnection();
+
+			String query = "TRUNCATE usuarios";
+
+			PreparedStatement ps = connection.prepareStatement(query);
+
+			return ps.executeUpdate() != PreparedStatement.EXECUTE_FAILED;
+
+		} catch (SQLException e) {
+			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
+			return false;
+		} catch (ClassNotFoundException e) {
+			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
+			return false;
+		}
+	}
+
+	@Override
 	public Usuario selecionar(int id)
 	{
 		try {
@@ -218,51 +265,6 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 		} catch (ClassNotFoundException e) {
 			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
 			return null;
-		}
-	}
-
-	public boolean remover(Usuario usuario)
-	{
-		try {
-
-			Sql sql = new Mysql();
-			Connection connection = sql.getConnection();
-
-			String query = "DELETE FROM usuarios WHERE id = ?";
-
-			PreparedStatement ps = connection.prepareStatement(query);
-			ps.setInt(1, usuario.getId());
-
-			return ps.executeUpdate() != PreparedStatement.EXECUTE_FAILED;
-
-		} catch (SQLException e) {
-			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
-			return false;
-		} catch (ClassNotFoundException e) {
-			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
-			return false;
-		}
-	}
-
-	public boolean truncar()
-	{
-		try {
-
-			Sql sql = new Mysql();
-			Connection connection = sql.getConnection();
-
-			String query = "TRUNCATE usuarios";
-
-			PreparedStatement ps = connection.prepareStatement(query);
-
-			return ps.executeUpdate() != PreparedStatement.EXECUTE_FAILED;
-
-		} catch (SQLException e) {
-			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
-			return false;
-		} catch (ClassNotFoundException e) {
-			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
-			return false;
 		}
 	}
 

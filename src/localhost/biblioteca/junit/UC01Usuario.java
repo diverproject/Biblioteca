@@ -24,7 +24,7 @@ public class UC01Usuario
 	}
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception
+	public static void iniciarTeste() throws Exception
 	{
 		dao = new UsuarioDAO(Biblioteca.request());
 	}
@@ -125,7 +125,7 @@ public class UC01Usuario
 	}
 
 	@AfterClass
-	public static void tearDownAfterClass() throws Exception
+	public static void terminarTeste() throws Exception
 	{
 		
 	}

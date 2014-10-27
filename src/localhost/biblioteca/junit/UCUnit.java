@@ -7,7 +7,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses
 ({
-	UC01Usuario.class
+	UC01Usuario.class,
+	UC02Editora.class
 })
 public class UCUnit
 {

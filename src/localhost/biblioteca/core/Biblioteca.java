@@ -7,6 +7,8 @@ import localhost.biblioteca.entidades.Usuario;
 
 public class Biblioteca
 {
+	public static final String[] UFS = new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" };
+
 	public static void alert(HttpServletRequest request, String variable, String message, Object... objects)
 	{
 		request.setAttribute(variable, String.format(message, objects));
