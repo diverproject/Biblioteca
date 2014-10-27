@@ -1,4 +1,4 @@
-Ôªø<div class="banner"></div>
+<div class="banner"></div>
 <br>
 
 <%
@@ -13,9 +13,10 @@
 <!-- Inicio da barra de menu -->
 <div class="menu">
 	<ul>
-		<li><a href="index.jsp?page=inicio">P√°gina Inicial</a></li>
+		<li><a href="index.jsp?page=inicio">P·gina Inicial</a></li>
 		<% if (!logged) { %>
 		<li><a href="index.jsp?page=login">Acessar</a></li>
+		<li><a href="index.jsp?page=registrar">Registrar</a></li>
 		<% } else { %>
 		<li>
 			<a href="index.jsp?page=editoras">Editoras</a>
@@ -47,7 +48,7 @@
 			</ul>
 		</li>
 		<li>
-			<a href="index.jsp?page=usuarios">Usu√°rios</a>
+			<a href="index.jsp?page=usuarios">Usu·rios</a>
 			<ul class="dropdown">
 				<li><a href="index.jsp?page=usuarios?menu=listar">Listar</a></li>
 				<li><a href="index.jsp?page=usuarios?menu=pesquisar">Pesquisar</a></li>
@@ -65,7 +66,7 @@
 			</ul>
 		</li>
 		<li>
-			<a href="index.jsp?page=emprestimos">Empr√©stimos</a>
+			<a href="index.jsp?page=emprestimos">EmprÈstimos</a>
 			<ul class="dropdown">
 				<li><a href="index.jsp?page=emprestimos?menu=listar">Listar</a></li>
 				<li><a href="index.jsp?page=emprestimos?menu=pesquisar">Pesquisar</a></li>
@@ -85,7 +86,7 @@
 			</ul>
 		</li>
 		<% } %>
-		<li><a href="index.jsp?page=estatisticas">Estat√≠sticas</a></li>
+		<li><a href="index.jsp?page=estatisticas">EstatÌsticas</a></li>
 	</ul>
 </div>
 <!-- Fim da barra de menu -->

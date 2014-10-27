@@ -7,7 +7,8 @@
 	if (filepage != null)
 		filename = filepage;
 
-	String message = request.getAttribute("error") != null ? "<div class=\"danger alert\">Erro: " +request.getAttribute("error")+ ".</div>" : 
+	String message = request.getAttribute("warning") != null ? "<div class=\"warning alert\">Aviso: " +request.getAttribute("warning")+ ".</div>" :
+					request.getAttribute("error") != null ? "<div class=\"danger alert\">Erro: " +request.getAttribute("error")+ ".</div>" : 
 					request.getAttribute("exception") != null ? "<div class=\"danger alert\">Exception: " +request.getAttribute("exception")+ ".</div>" : 
 					request.getAttribute("success") != null ? "<div class=\"success alert\">Sucesso: " +request.getAttribute("success")+ ".</div>" :
 					request.getAttribute("instanceof") != null ? "<div class=\"info alert\">Informação: " +request.getAttribute("instanceof")+ ".</div>" : "";
