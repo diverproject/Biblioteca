@@ -34,19 +34,19 @@ public class UC01Usuario
 	{
 		Usuario usuario = criarUsuario();
 
-		assertTrue(dao.truncate());
+		assertTrue(dao.truncar());
 
 		int id = dao.proximo();
 		usuario.setId(id);
 
 		assertTrue(id > 0);
-		assertTrue(dao.insert(usuario));
+		assertTrue(dao.inserir(usuario));
 		assertTrue(dao.existe(usuario.getUsuario()));
 
 		usuario.setAcesso(1);
 
-		assertTrue(dao.update(usuario));
-		assertTrue(dao.remove(usuario));
+		assertTrue(dao.atualizar(usuario));
+		assertTrue(dao.remover(usuario));
 	}
 
 	@Test

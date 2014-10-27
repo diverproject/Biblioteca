@@ -31,7 +31,7 @@ public class CreateAccount implements ServletPost
 		.setAcesso(0);
 
 		UsuarioDAO dao = new UsuarioDAO(request);
-		String validate = dao.validate(usuario);
+		String validate = dao.validar(usuario);
 
 		if (validate != null)
 		{
@@ -40,7 +40,7 @@ public class CreateAccount implements ServletPost
 			return;
 		}
 
-		if (dao.insert(usuario))
+		if (dao.inserir(usuario))
 		{
 			request.setAttribute("success", "usuário registrado com êxito");
 			request.getRequestDispatcher("index.jsp?page=registrar").forward(request, response);

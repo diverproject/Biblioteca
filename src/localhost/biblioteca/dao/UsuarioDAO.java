@@ -20,7 +20,7 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 	}
 
 	@Override
-	public String validate(Usuario usuario)
+	public String validar(Usuario usuario)
 	{
 		if (!validarNome(usuario))
 			return "nome inválido";
@@ -124,7 +124,7 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 	}
 
 	@Override
-	public boolean insert(Usuario usuario)
+	public boolean inserir(Usuario usuario)
 	{
 		try {
 
@@ -158,7 +158,7 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 	}
 
 	@Override
-	public boolean update(Usuario usuario)
+	public boolean atualizar(Usuario usuario)
 	{
 		try {
 
@@ -187,7 +187,7 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 	}
 
 	@Override
-	public Usuario select(int id)
+	public Usuario selecionar(int id)
 	{
 		try {
 
@@ -221,7 +221,7 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 		}
 	}
 
-	public boolean remove(Usuario usuario)
+	public boolean remover(Usuario usuario)
 	{
 		try {
 
@@ -244,7 +244,7 @@ public class UsuarioDAO extends DaoAbstract<Usuario>
 		}
 	}
 
-	public boolean truncate()
+	public boolean truncar()
 	{
 		try {
 

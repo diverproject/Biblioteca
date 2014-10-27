@@ -2,11 +2,11 @@
 
 public interface DAO<E>
 {
-	String validate(E e);
+	String validar(E e);
 	int proximo();
-	boolean insert(E e);
-	boolean update(E e);
-	boolean remove(E e);
-	boolean truncate();
-	E select(int id);
+	boolean inserir(E e);
+	boolean atualizar(E e);
+	boolean remover(E e);
+	boolean truncar();
+	E selecionar(int id);
 }
