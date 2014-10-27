@@ -31,9 +31,15 @@ public class ControlServlet extends HttpServlet
 
 			request.setAttribute("instanceof", String.format("classe não é um ServletPost (%s)", classname));
 
+		} catch (ClassNotFoundException e) {
+			request.setAttribute("exception", String.format("ClassNotFoundException (%s)", e.getMessage()));
+		} catch (InstantiationException e) {
+			request.setAttribute("exception", String.format("InstantiationException (%s)", e.getMessage()));
+		} catch (IllegalAccessException e) {
+			request.setAttribute("exception", String.format("IllegalAccessException (%s)", e.getMessage()));
 		} catch (Exception e) {
-			request.setAttribute("exception", String.format("classe não encontrada (%s)", e.getMessage()));
-		} 
+			request.setAttribute("exception", String.format("Exception (%s)", e.getMessage()));
+		}
 
 		request.getRequestDispatcher("?page=notfound").forward(request, response);
 	}
