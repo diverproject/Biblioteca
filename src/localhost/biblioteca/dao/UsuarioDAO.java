@@ -12,7 +12,7 @@ import localhost.biblioteca.core.Mysql;
 import localhost.biblioteca.core.Sql;
 import localhost.biblioteca.entidades.Usuario;
 
-public class UsuarioDAO extends DAOAbstract<Usuario>
+public class UsuarioDAO extends AbstractDao<Usuario>
 {
 	public UsuarioDAO(HttpServletRequest request)
 	{
@@ -233,7 +233,6 @@ public class UsuarioDAO extends DAOAbstract<Usuario>
 		}
 	}
 
-	@Override
 	public Usuario selecionar(int id)
 	{
 		try {

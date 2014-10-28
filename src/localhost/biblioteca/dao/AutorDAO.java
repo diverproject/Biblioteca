@@ -12,7 +12,7 @@ import localhost.biblioteca.core.Mysql;
 import localhost.biblioteca.core.Sql;
 import localhost.biblioteca.entidades.Autor;
 
-public class AutorDAO extends DAOAbstract<Autor>
+public class AutorDAO extends AbstractDao<Autor>
 {
 	public AutorDAO(HttpServletRequest request)
 	{
@@ -209,7 +209,6 @@ public class AutorDAO extends DAOAbstract<Autor>
 		}
 	}
 
-	@Override
 	public Autor selecionar(int id)
 	{
 		try {
