@@ -2,19 +2,30 @@
 
 public class Autor
 {
-	private int codigo;
+	private int id;
 	private String nome;
 	private String sobrenome;
+	private String nascionalidade;
 
-	public int getCodigo()
+	public int getId()
 	{
-		return codigo;
+		return id;
 	}
 
-	public Autor setCodigo(int codigo)
+	public Autor setId(int id)
 	{
-		this.codigo = codigo;
+		this.id = id;
 		return this;
+	}
+
+	public String getNomeCompleto()
+	{
+		return String.format("%s %s", nome, sobrenome);
+	}
+
+	public String getNomeCientifico()
+	{
+		return String.format("%s, %s", sobrenome.toUpperCase(), nome);
 	}
 
 	public String getNome()
@@ -39,8 +50,19 @@ public class Autor
 		return this;
 	}
 
+	public String getNascionalidade()
+	{
+		return nascionalidade;
+	}
+
+	public Autor setNascionalidade(String nascionalidade)
+	{
+		this.nascionalidade = nascionalidade;
+		return this;
+	}
+
 	public String toString()
 	{
-		return nome+ " " +sobrenome;
+		return String.format("Autor [ID: %d] [Nome: %s] [Sobrenome: %s] [Nacionalidade: %s]", id, nome, sobrenome, nascionalidade);
 	}
 }

@@ -28,3 +28,13 @@ CREATE TABLE editoras
 
 	PRIMARY KEY (id)
 );
+
+CREATE TABLE autores
+(
+	id INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(16) NOT NULL,
+	sobrenome VARCHAR(32) NOT NULL,
+	nascionalidade VARCHAR(24) NOT NULL,
+
+	PRIMARY KEY (id)
+);

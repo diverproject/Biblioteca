@@ -12,7 +12,7 @@ import localhost.biblioteca.core.Mysql;
 import localhost.biblioteca.core.Sql;
 import localhost.biblioteca.entidades.Editora;
 
-public class EditoraDAO extends DaoAbstract<Editora>
+public class EditoraDAO extends DAOAbstract<Editora>
 {
 	public EditoraDAO(HttpServletRequest request)
 	{
