@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ï»¿<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,15 +10,15 @@
 <form>
 		<table>
 			<tr>
-				<td>Código</td>
+				<td>CÃ³digo</td>
 				<td><input type="text" name="txtCodigo" value="" /></td>
 			</tr>
 			<tr>
-				<td>Título</td>
+				<td>TÃ­tulo</td>
 				<td><input type="text" name="txtTitulo" value="" /></td>
 			</tr>
 			<tr>
-				<td>Subtítulo</td>
+				<td>SubtÃ­tulo</td>
 				<td><input type="text" name="txtSubtitulo" value="" /></td>
 			</tr>			
 			<tr>

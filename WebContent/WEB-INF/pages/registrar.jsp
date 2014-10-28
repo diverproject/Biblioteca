@@ -1,4 +1,4 @@
-	<form class="formdmd aligned" action="Control" method="post">
+﻿	<form class="formdmd aligned" action="Control" method="post">
 		<fieldset>
 			<legend>Registrar</legend>
 			<ul>
@@ -14,7 +14,7 @@
 					</select>
 				</li>
 				<li class="group">
-					<label>Nome de Usu�rio</label>
+					<label>Nome de Usuário</label>
 					<input type="text" maxlength="24" name="username"/>
 				</li>
 				<li class="group">
