@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Obra
 {
-	private int codigo;
+	private int id;
 	private int edicao;
 	private int ano;
 	private int cdu;
@@ -13,21 +13,20 @@ public class Obra
 	private String titulo;
 	private String subtitulo;
 	private String cidade;
-	private String editoraNome;
 
 	private Livro livro;
 	private Disco disco;
 
 	private ArrayList<Autor> autores = new ArrayList<Autor>();
 
-	public int getCodigo()
+	public int getId()
 	{
-		return codigo;
+		return id;
 	}
 
-	public Obra setCodigo(int codigo)
+	public Obra setId(int id)
 	{
-		this.codigo = codigo;
+		this.id = id;
 		return this;
 	}
 
@@ -105,17 +104,6 @@ public class Obra
 	public Obra setEditora(int editora)
 	{
 		this.editora = editora;
-		return this;
-	}
-
-	public String getEditoraNome()
-	{
-		return this.editoraNome;
-	}
-
-	public Obra setEditoraNome(String editoraNome)
-	{
-		this.editoraNome = editoraNome;
 		return this;
 	}
 
