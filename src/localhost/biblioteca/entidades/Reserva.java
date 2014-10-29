@@ -1,34 +1,31 @@
 ﻿package localhost.biblioteca.entidades;
 
-import java.util.Date;
-
 public class Reserva
 {
-	private int codigo;
-	private int aluno;
+	private int id;
+	private int usuario;
 	private int obra;
 	private int estado;
-	private Date dia;
 
-	public int getCodigo()
+	public int getId()
 	{
-		return codigo;
+		return id;
 	}
 
-	public Reserva setCodigo(int codigo)
+	public Reserva setId(int id)
 	{
-		this.codigo = codigo;
+		this.id = id;
 		return this;
 	}
 
-	public int getAluno()
+	public int getUsuario()
 	{
-		return aluno;
+		return usuario;
 	}
 
-	public Reserva setAluno(int aluno)
+	public Reserva setUsuario(int usuario)
 	{
-		this.aluno = aluno;
+		this.usuario = usuario;
 		return this;
 	}
 
@@ -51,17 +48,6 @@ public class Reserva
 	public Reserva setEstado(int estado)
 	{
 		this.estado = estado;
-		return this;
-	}
-
-	public Date getData()
-	{
-		return dia;
-	}
-
-	public Reserva setDia(Date dia)
-	{
-		this.dia = dia;
 		return this;
 	}
 }

@@ -2,22 +2,22 @@
 
 public class Livro
 {
-	private int codigo;
+	private int id;
 	private int paginas;
 	private int obra;
-	private int unidades;
+	private int disco;
 
 	private String isbn;
 	private String tradutor;
 
-	public int getCodigo()
+	public int getId()
 	{
-		return codigo;
+		return id;
 	}
 
-	public Livro setCodigo(int codigo)
+	public Livro setId(int id)
 	{
-		this.codigo = codigo;
+		this.id = id;
 		return this;
 	}
 
@@ -65,14 +65,20 @@ public class Livro
 		return this;
 	}
 
-	public int getUnidades()
+	public int getDisco()
 	{
-		return unidades;
+		return disco;
 	}
 
-	public Livro setUnidades(int unidades)
+	public Livro setDisco(int disco)
 	{
-		this.unidades = unidades;
+		this.disco = disco;
 		return this;
+	}
+
+	@Override
+	public String toString()
+	{
+		return String.format("Livro [ID: %d] [Páginas: %d] [Obra: %d] [ISBN: %d] [Tradutor: %s] [Disco: %d]", id, paginas, obra, isbn, tradutor, disco);
 	}
 }

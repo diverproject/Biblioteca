@@ -2,17 +2,17 @@
 
 public class Disco
 {
-	private int codigo;
+	private int id;
 	private String tipo;
 
-	public int getCodigo()
+	public int getId()
 	{
-		return codigo;
+		return id;
 	}
 
-	public Disco setCodigo(int codigo)
+	public Disco setId(int id)
 	{
-		this.codigo = codigo;
+		this.id = id;
 		return this;
 	}
 

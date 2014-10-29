@@ -63,3 +63,61 @@ CREATE TABLE obras
 	FOREIGN KEY (cdu) REFERENCES cdus(id),
 	FOREIGN KEY (editora) REFERENCES editoras(id)
 );
+
+CREATE TABLE livros
+(
+	id INT NOT NULL AUTO_INCREMENT,
+	paginas INT NOT NULL,
+	tradutor VARCHAR(48),
+	isbn CHAR(13) NOT NULL,
+
+	PRIMARY KEY (id)
+) ENGINE = MyISAM;
+
+CREATE TABLE discos
+(
+	id INT NOT NULL AUTO_INCREMENT,
+	tipo VARCHAR (3) DEFAULT 'CD' CHECK(tipo = 'CD' OR tipo = 'DVD'),
+
+	PRIMARY KEY (id)
+) ENGINE = MyISAM;
+
+CREATE TABLE exemplares
+(
+	tombo INT NOT NULL AUTO_INCREMENT,
+	obra INT NOT NULL,
+	livro INT NOT NULL,
+	disco INT,
+	emprestado CHAR(1) NOT NULL DEFAULT '0' CHECK(tipo = '0' OR tipo = '1'),
+
+	PRIMARY KEY (tombo),
+	FOREIGN KEY (obra) REFERENCES obras(id),
+	FOREIGN KEY (livro) REFERENCES livros(id),
+	FOREIGN KEY (disco) REFERENCES discos(id)
+) ENGINE = MyISAM;
+
+CREATE TABLE reservas
+(
+	id INT NOT NULL AUTO_INCREMENT,
+	aluno INT NOT NULL,
+	obra INT NOT NULL,
+	dia DATE NOT NULL,
+	estado CHAR(1) NOT NULL DEFAULT '0',
+
+	PRIMARY KEY (id, aluno, obra),
+	FOREIGN KEY (aluno) REFERENCES alunos(id),
+	FOREIGN KEY (obra) REFERENCES obras(id)
+) ENGINE = MyISAM;
+
+CREATE TABLE emprestimos
+(
+	id INT NOT NULL AUTO_INCREMENT,
+	usuario INT NOT NULL,
+	obra INT NOT NULL,
+	retirada DATE NOT NULL,
+	devolucao DATE,
+
+	PRIMARY KEY (id, aluno, tombo),
+	FOREIGN KEY (usuario) REFERENCES usuarios(id),
+	FOREIGN KEY (obra) REFERENCES obras(id)
+) ENGINE = MyISAM;

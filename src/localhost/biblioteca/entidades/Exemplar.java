@@ -4,8 +4,9 @@ public class Exemplar
 {
 	private int tombo;
 	private int obra;
-	private int livro;
-	private int disco;
+	private Livro livro;
+	private Disco disco;
+	private boolean emprestado;
 
 	public int getTombo()
 	{
@@ -29,25 +30,42 @@ public class Exemplar
 		return this;
 	}
 
-	public int getLivro()
+	public Livro getLivro()
 	{
 		return livro;
 	}
 
-	public Exemplar setLivro(int livro)
+	public Exemplar setLivro(Livro livro)
 	{
 		this.livro = livro;
 		return this;
 	}
 
-	public int getDisco()
+	public Disco getDisco()
 	{
 		return disco;
 	}
 
-	public Exemplar setDisco(int disco)
+	public Exemplar setDisco(Disco disco)
 	{
 		this.disco = disco;
 		return this;
+	}
+
+	public boolean getEmprestado()
+	{
+		return emprestado;
+	}
+
+	public Exemplar setEmprestado(boolean emprestado)
+	{
+		this.emprestado = emprestado;
+		return this;
+	}
+
+	@Override
+	public String toString()
+	{
+		return String.format("Exemplar [Tombo: %d] [Obra: %d] [Livro: %d] [Disco: %d] [Emprestado: %s]", tombo, obra, livro.getId(), disco.getTipo(), emprestado);
 	}
 }
