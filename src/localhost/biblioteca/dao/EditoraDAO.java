@@ -412,6 +412,45 @@ public class EditoraDAO extends AbstractDao<Editora>
 		}
 	}
 
+	public Editora selecionar(String nome)
+	{
+		try {
+
+			Sql sql = new Mysql();
+			Connection connection = sql.getConnection();
+
+			String query = "SELECT * FROM editoras WHERE nome = ?";
+
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setString(1, nome);
+
+			ResultSet result = ps.executeQuery();
+
+			if (!result.next())
+				return null;
+
+			return new Editora()
+			.setId(result.getInt("id"))
+			.setNome(result.getString("nome"))
+			.setLogradouro(result.getString("logradouro"))
+			.setNumero(result.getString("numero"))
+			.setComplemento(result.getString("complemento"))
+			.setBairro(result.getString("bairro"))
+			.setCidade(result.getString("bairro"))
+			.setUf(result.getString("uf"))
+			.setCep(result.getString("cep"))
+			.setTelefone(result.getString("telefone"))
+			.setEmail(result.getString("email"));
+
+		} catch (SQLException e) {
+			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
+			return null;
+		} catch (ClassNotFoundException e) {
+			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
+			return null;
+		}
+	}
+
 	public boolean existe(int id)
 	{
 		try {

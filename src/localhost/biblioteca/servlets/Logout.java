@@ -34,6 +34,6 @@ public class Logout extends HttpServlet
 		else
 			request.setAttribute("warning", "nenhuma conta acessada");
 
-		request.getRequestDispatcher("index.jsp?page=inicio").forward(request, response);;
+		request.getRequestDispatcher("index.jsp?page=inicio").forward(request, response);
 	}
 }

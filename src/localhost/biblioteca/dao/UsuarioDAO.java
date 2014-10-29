@@ -85,9 +85,6 @@ public class UsuarioDAO extends AbstractDao<Usuario>
 		if (usuario.getSenha().length() < 4)
 			return false;
 
-		if (usuario.getSenha() == null)
-			return false;
-
 		return true;
 	}
 
@@ -324,10 +321,10 @@ public class UsuarioDAO extends AbstractDao<Usuario>
 
 		} catch (SQLException e) {
 			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
-			return true;
+			return false;
 		} catch (ClassNotFoundException e) {
 			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
-			return true;
+			return false;
 		}
 	}
 }

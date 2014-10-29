@@ -1,5 +1,7 @@
 ﻿package localhost.biblioteca.entidades;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class Editora
 {
 	private int id;
@@ -13,6 +15,40 @@ public class Editora
 	private String cep;
 	private String telefone;
 	private String email;
+
+	public Editora()
+	{
+		
+	}
+
+	public Editora(HttpServletRequest request)
+	{
+		boolean ok = true;
+		String sid = request.getParameter("id");
+
+		if (sid == null)
+			ok = false;
+
+		else
+			for (char c : sid.toCharArray())
+				if (c < '0' || c > '9')
+				{
+					ok = false;
+					break;
+				}
+
+		this.id = (ok) ? Integer.parseInt(sid) : 0;
+		this.nome = request.getParameter("nome");
+		this.logradouro = request.getParameter("logradouro");
+		this.numero = request.getParameter("numero");
+		this.complemento = request.getParameter("complemento");
+		this.bairro = request.getParameter("bairro");
+		this.cidade = request.getParameter("cidade");
+		this.uf = request.getParameter("uf");
+		this.cep = request.getParameter("cep");
+		this.telefone = request.getParameter("telefone");
+		this.email = request.getParameter("email");
+	}
 
 	public int getId()
 	{
@@ -65,7 +101,7 @@ public class Editora
 
 	public Editora setComplemento(String complemento)
 	{
-		this.complemento = complemento;
+		this.complemento = complemento == "" ? null : complemento;
 		return this;
 	}
 
@@ -120,7 +156,7 @@ public class Editora
 
 	public Editora setTelefone(String telefone)
 	{
-		this.telefone = telefone;
+		this.telefone = telefone == "" ? null : telefone;
 		return this;
 	}
 
@@ -131,12 +167,13 @@ public class Editora
 
 	public Editora setEmail(String email)
 	{
-		this.email = email;
+		this.email = email == "" ? null : email;
 		return this;
 	}
 
+	@Override
 	public String toString()
 	{
-		return nome;
+		return String.format("Editora [ID: %d] [Nome: %s] [Logradouro: %s] [Número: %s] [Complemento: %s] [Bairro: %s] [Cidade: %s] [UF: %s] [Telefone: %s] [Email: %s]", id, nome, logradouro, numero, complemento, bairro, cidade, uf, telefone, email);
 	}
 }

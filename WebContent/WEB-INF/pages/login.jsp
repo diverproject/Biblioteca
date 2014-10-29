@@ -1,9 +1,15 @@
-﻿	<form class="formdmd aligned" action="Control" method="post">
+<%
+	Object object = session.getAttribute("logged");
+
+	if (object instanceof Boolean && (boolean) object)
+		return;
+%>
+	<form class="formdmd aligned" action="Control" method="post">
 		<fieldset>
 			<legend>Painel de Acesso</legend>
 			<ul>
 				<li class="group">
-					<label>Usuário</label>
+					<label>Usu�rio</label>
 					<input type="text" maxlength="24" name="username"/>
 				</li>
 				<li class="group">

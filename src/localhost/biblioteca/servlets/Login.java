@@ -18,35 +18,35 @@ public class Login implements ServletPost
 		String user = request.getParameter("username");
 		String senha = request.getParameter("password");
 
-		UsuarioDAO dao = new UsuarioDAO(request);
-
 		Usuario usuario = new Usuario()
 		.setUsuario(user)
 		.setSenha(senha);
 
+		UsuarioDAO dao = new UsuarioDAO(request);
+
 		if (!dao.validarUsuario(usuario))
 		{
 			request.setAttribute("warning", "usuário inválido");
-			request.getRequestDispatcher("index.jsp?page=login");
-			return;
+			request.getRequestDispatcher("index.jsp?page=login").forward(request, response);
 		}
 
-		if (!dao.validarSenha(usuario))
+		else if (!dao.validarSenha(usuario))
 		{
 			request.setAttribute("warning", "senha inválida");
-			request.getRequestDispatcher("index.jsp?page=login");
-			return;
+			request.getRequestDispatcher("index.jsp?page=login").forward(request, response);
 		}
 
-		if (!dao.login(usuario))
+		else if (!dao.login(usuario))
 		{
 			request.setAttribute("warning", "usuário ou senha incorreta");
-			request.getRequestDispatcher("index.jsp?page=login");
-			return;
+			request.getRequestDispatcher("index.jsp?page=login").forward(request, response);
 		}
 
-		Biblioteca.login(usuario, request);
-		request.setAttribute("success", "acesso efetuado com êxito");
-		request.getRequestDispatcher("index.jsp?page=inicio").forward(request, response);
+		else
+		{
+			Biblioteca.login(usuario, request);
+			request.setAttribute("success", "acesso efetuado com êxito");
+			request.getRequestDispatcher("index.jsp?page=inicio").forward(request, response);
+		}
 	}
 }

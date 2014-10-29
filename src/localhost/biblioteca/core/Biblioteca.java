@@ -31,4 +31,51 @@ public class Biblioteca
 		session.setAttribute("acesso", usuario.getAcesso());
 		session.setAttribute("sexo", usuario.getSexo());
 	}
+
+	public static String message(HttpServletRequest request)
+	{
+		String message = "";
+
+		if (request.getAttribute("warning") != null)
+			message += aviso((String) request.getAttribute("warning"));
+
+		if (request.getAttribute("error") != null)
+			message += erro((String) request.getAttribute("error"));
+
+		if (request.getAttribute("exception") != null)
+			exception((String) request.getAttribute("exception"));
+
+		if (request.getAttribute("success") != null)
+			sucesso((String) request.getAttribute("success"));
+
+		if (request.getAttribute("instanceof") != null)
+			info((String) request.getAttribute("instanceof"));
+
+		return message;
+	}
+
+	public static String aviso(String message)
+	{
+		return String.format("<div class=\"warning alert\">Aviso: %s.</div>", message);
+	}
+
+	public static String erro(String message)
+	{
+		return String.format("<div class=\"danger alert\">Erro: %s.</div>", message);
+	}
+
+	public static String exception(String message)
+	{
+		return String.format("<div class=\"danger alert\">Exception: %s.</div>", message);
+	}
+
+	public static String sucesso(String message)
+	{
+		return String.format("<div class=\"success alert\">Sucesso: %s.</div>", message);
+	}
+
+	public static String info(String message)
+	{
+		return String.format("<div class=\"info alert\">Informação: %s.</div>", message);
+	}
 }

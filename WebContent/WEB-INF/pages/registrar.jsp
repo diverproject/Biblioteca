@@ -1,4 +1,10 @@
-﻿	<form class="formdmd aligned" action="Control" method="post">
+<%
+	Object object = session.getAttribute("logged");
+
+	if (object instanceof Boolean && (boolean) object)
+		return;
+%>
+	<form class="formdmd aligned" action="Control" method="post">
 		<fieldset>
 			<legend>Registrar</legend>
 			<ul>
@@ -14,7 +20,7 @@
 					</select>
 				</li>
 				<li class="group">
-					<label>Nome de Usuário</label>
+					<label>Nome de Usu�rio</label>
 					<input type="text" maxlength="24" name="username"/>
 				</li>
 				<li class="group">

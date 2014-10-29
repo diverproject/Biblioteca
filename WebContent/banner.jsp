@@ -19,70 +19,70 @@
 		<li><a href="index.jsp?page=registrar">Registrar</a></li>
 		<% } else { %>
 		<li>
-			<a href="index.jsp?page=editoras">Editoras</a>
+			<a href="index.jsp?page=editora">Editoras</a>
 			<ul class="dropdown">
-				<li><a href="index.jsp?page=editoras?menu=listar">Listar</a></li>
-				<li><a href="index.jsp?page=editoras?menu=pesquisar">Pesquisar</a></li>
-				<li><a href="index.jsp?page=editoras?menu=adicionar">Adicionar</a></li>
-				<li><a href="index.jsp?page=editoras?menu=alterar">Alterar</a></li>
-				<li><a href="index.jsp?page=editoras?menu=obras">Obras</a></li>
+				<li><a href="index.jsp?page=editora?menu=listar">Listar</a></li>
+				<li><a href="index.jsp?page=editora?menu=pesquisar">Pesquisar</a></li>
+				<li><a href="index.jsp?page=editora?menu=adicionar">Adicionar</a></li>
+				<li><a href="index.jsp?page=editora?menu=alterar">Alterar</a></li>
+				<li><a href="index.jsp?page=editora?menu=obras">Obras</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="index.jsp?page=autores">Autores</a>
+			<a href="index.jsp?page=autor">Autores</a>
 			<ul class="dropdown">
-				<li><a href="index.jsp?page=autores?menu=listar">Listar</a></li>
-				<li><a href="index.jsp?page=autores?menu=pesquisar">Pesquisar</a></li>
-				<li><a href="index.jsp?page=autores?menu=adicionar">Adicionar</a></li>
-				<li><a href="index.jsp?page=autores?menu=alterar">Alterar</a></li>
-				<li><a href="index.jsp?page=autores?menu=obras">Obras</a></li>
+				<li><a href="index.jsp?page=autor?menu=listar">Listar</a></li>
+				<li><a href="index.jsp?page=autor?menu=pesquisar">Pesquisar</a></li>
+				<li><a href="index.jsp?page=autor?menu=adicionar">Adicionar</a></li>
+				<li><a href="index.jsp?page=autor?menu=alterar">Alterar</a></li>
+				<li><a href="index.jsp?page=autor?menu=obras">Obras</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="index.jsp?page=obras">Obras</a>
+			<a href="index.jsp?page=obra">Obras</a>
 			<ul class="dropdown">
-				<li><a href="index.jsp?page=obras?menu=listar">Listar</a></li>
-				<li><a href="index.jsp?page=obras?menu=pesquisar">Pesquisar</a></li>
-				<li><a href="index.jsp?page=obras?menu=adicionar">Adicionar</a></li>
-				<li><a href="index.jsp?page=obras?menu=alterar">Alterar</a></li>
+				<li><a href="index.jsp?page=obra?menu=listar">Listar</a></li>
+				<li><a href="index.jsp?page=obra?menu=pesquisar">Pesquisar</a></li>
+				<li><a href="index.jsp?page=obra?menu=adicionar">Adicionar</a></li>
+				<li><a href="index.jsp?page=obra?menu=alterar">Alterar</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="index.jsp?page=usuarios">Usuários</a>
+			<a href="index.jsp?page=usuario">Usuários</a>
 			<ul class="dropdown">
-				<li><a href="index.jsp?page=usuarios?menu=listar">Listar</a></li>
-				<li><a href="index.jsp?page=usuarios?menu=pesquisar">Pesquisar</a></li>
-				<li><a href="index.jsp?page=usuarios?menu=adicionar">Adicionar</a></li>
-				<li><a href="index.jsp?page=usuarios?menu=alterar">Alterar</a></li>
+				<li><a href="index.jsp?page=usuario?menu=listar">Listar</a></li>
+				<li><a href="index.jsp?page=usuario?menu=pesquisar">Pesquisar</a></li>
+				<li><a href="index.jsp?page=usuario?menu=adicionar">Adicionar</a></li>
+				<li><a href="index.jsp?page=usuario?menu=alterar">Alterar</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="index.jsp?page=tccs">TCCs</a>
+			<a href="index.jsp?page=tcc">TCCs</a>
 			<ul class="dropdown">
-				<li><a href="index.jsp?page=tccs?menu=listar">Listar</a></li>
-				<li><a href="index.jsp?page=tccs?menu=pesquisar">Pesquisar</a></li>
-				<li><a href="index.jsp?page=tccs?menu=adicionar">Adicionar</a></li>
-				<li><a href="index.jsp?page=tccs?menu=alterar">Alterar</a></li>
+				<li><a href="index.jsp?page=tcc?menu=listar">Listar</a></li>
+				<li><a href="index.jsp?page=tcc?menu=pesquisar">Pesquisar</a></li>
+				<li><a href="index.jsp?page=tcc?menu=adicionar">Adicionar</a></li>
+				<li><a href="index.jsp?page=tcc?menu=alterar">Alterar</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="index.jsp?page=emprestimos">Empréstimos</a>
+			<a href="index.jsp?page=emprestimo">Empréstimos</a>
 			<ul class="dropdown">
-				<li><a href="index.jsp?page=emprestimos?menu=listar">Listar</a></li>
-				<li><a href="index.jsp?page=emprestimos?menu=pesquisar">Pesquisar</a></li>
-				<li><a href="index.jsp?page=emprestimos?menu=adicionar">Adicionar</a></li>
-				<li><a href="index.jsp?page=emprestimos?menu=alterar">Alterar</a></li>
-				<li><a href="index.jsp?page=emprestimos?menu=atrasados">Atrasados</a></li>
+				<li><a href="index.jsp?page=emprestimo?menu=listar">Listar</a></li>
+				<li><a href="index.jsp?page=emprestimo?menu=pesquisar">Pesquisar</a></li>
+				<li><a href="index.jsp?page=emprestimo?menu=adicionar">Adicionar</a></li>
+				<li><a href="index.jsp?page=emprestimo?menu=alterar">Alterar</a></li>
+				<li><a href="index.jsp?page=emprestimo?menu=atrasados">Atrasados</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="index.jsp?page=reservas">Reservas</a>
+			<a href="index.jsp?page=reserva">Reservas</a>
 			<ul class="dropdown">
-				<li><a href="index.jsp?page=reservas?menu=listar">Listar</a></li>
-				<li><a href="index.jsp?page=reservas?menu=pesquisar">Pesquisar</a></li>
-				<li><a href="index.jsp?page=reservas?menu=adicionar">Adicionar</a></li>
-				<li><a href="index.jsp?page=reservas?menu=alterar">Alterar</a></li>
-				<li><a href="index.jsp?page=reservas?menu=prontas">Prontas</a></li>
+				<li><a href="index.jsp?page=reserva?menu=listar">Listar</a></li>
+				<li><a href="index.jsp?page=reserva?menu=pesquisar">Pesquisar</a></li>
+				<li><a href="index.jsp?page=reserva?menu=adicionar">Adicionar</a></li>
+				<li><a href="index.jsp?page=reserva?menu=alterar">Alterar</a></li>
+				<li><a href="index.jsp?page=reserva?menu=prontas">Prontas</a></li>
 			</ul>
 		</li>
 		<% } %>

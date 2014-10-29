@@ -1,4 +1,5 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+﻿<%@page import="localhost.biblioteca.core.Biblioteca"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 	String filename = "inicio";
@@ -7,11 +8,7 @@
 	if (filepage != null)
 		filename = filepage;
 
-	String message = request.getAttribute("warning") != null ? "<div class=\"warning alert\">Aviso: " +request.getAttribute("warning")+ ".</div>" :
-					request.getAttribute("error") != null ? "<div class=\"danger alert\">Erro: " +request.getAttribute("error")+ ".</div>" : 
-					request.getAttribute("exception") != null ? "<div class=\"danger alert\">Exception: " +request.getAttribute("exception")+ ".</div>" : 
-					request.getAttribute("success") != null ? "<div class=\"success alert\">Sucesso: " +request.getAttribute("success")+ ".</div>" :
-					request.getAttribute("instanceof") != null ? "<div class=\"info alert\">Informação: " +request.getAttribute("instanceof")+ ".</div>" : "";
+	String message = Biblioteca.message(request);
 %>
 <html>
 <head>
