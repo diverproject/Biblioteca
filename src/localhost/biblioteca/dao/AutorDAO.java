@@ -110,7 +110,7 @@ public class AutorDAO extends AbstractDao<Autor>
 
 			if (existe(autor))
 			{
-				Biblioteca.alert(request, "warning", "autor '%s, %s' já está foi registrado", autor.getSobrenome().toUpperCase(), autor.getNome());
+				Biblioteca.alert(request, "warning", "autor '%s' já está foi registrado", autor.getNomeCientifico());
 				return false;
 			}
 
@@ -244,7 +244,7 @@ public class AutorDAO extends AbstractDao<Autor>
 	public boolean existe(Autor autor)
 	{
 		if (!validarNome(autor) || !validarSobrenome(autor))
-			return false;
+			return true;
 
 		try {
 

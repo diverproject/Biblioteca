@@ -258,10 +258,9 @@ public class HttpRequest implements HttpServletRequest
 	}
 
 	@Override
-	public void setAttribute(String arg0, Object arg1)
+	public void setAttribute(String attribute, Object value)
 	{
-		// TODO Auto-generated method stub
-		
+		System.out.printf("Atributo '%s': %s\n", attribute, value.toString());
 	}
 
 	@Override

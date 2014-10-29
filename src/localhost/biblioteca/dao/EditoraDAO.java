@@ -258,7 +258,7 @@ public class EditoraDAO extends AbstractDao<Editora>
 	{
 		try {
 
-			if (existe(editora.getNome()))
+			if (existe(editora))
 			{
 				Biblioteca.alert(request, "warning", "editora '%s' já foi registrada", editora.getNome());
 				return false;
@@ -412,9 +412,34 @@ public class EditoraDAO extends AbstractDao<Editora>
 		}
 	}
 
-	public boolean existe(String nome)
+	public boolean existe(int id)
 	{
-		if (nome == null || nome.length() == 0 || nome.length() > 24)
+		try {
+
+			Sql sql = new Mysql();
+			Connection connection = sql.getConnection();
+
+			String query = "SELECT nome FROM editoras WHERE id = ?";
+
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setInt(1, id);
+
+			ResultSet result = ps.executeQuery();
+
+			return result.next();
+
+		} catch (SQLException e) {
+			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
+			return true;
+		} catch (ClassNotFoundException e) {
+			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
+			return true;
+		}
+	}
+
+	public boolean existe(Editora editora)
+	{
+		if (!validarNome(editora))
 			return true;
 
 		try {
@@ -425,7 +450,7 @@ public class EditoraDAO extends AbstractDao<Editora>
 			String query = "SELECT id FROM editoras WHERE nome = ?";
 
 			PreparedStatement ps = connection.prepareStatement(query);
-			ps.setString(1, nome);
+			ps.setString(1, editora.getNome());
 
 			ResultSet result = ps.executeQuery();
 

@@ -46,7 +46,7 @@ public class UC02Editora
 
 		assertTrue(id > 0);
 		assertTrue(dao.inserir(editora));
-		assertTrue(dao.existe(editora.getNome()));
+		assertTrue(dao.existe(editora));
 
 		editora.setComplemento("Novo complemento");
 
