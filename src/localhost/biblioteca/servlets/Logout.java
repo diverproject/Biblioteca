@@ -18,7 +18,7 @@ public class Logout extends HttpServlet
 		HttpSession session = request.getSession();
 		Object object = session.getAttribute("logged");
 
-		if (object != null && object instanceof Boolean && (boolean) object)
+		if (object != null && object instanceof Boolean && (Boolean) object)
 		{
 			session.removeAttribute("logged");
 			session.removeAttribute("id");

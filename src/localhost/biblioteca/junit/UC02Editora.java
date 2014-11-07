@@ -39,7 +39,7 @@ public class UC02Editora
 	{
 		Editora editora = criarEditora();
 
-		assertTrue(dao.truncar());
+//		assertTrue(dao.truncar());
 
 		int id = dao.proximo();
 		editora.setId(id);
@@ -135,7 +135,7 @@ public class UC02Editora
 		Editora editora = criarEditora();
 
 		editora.setComplemento("");
-		assertFalse(dao.validarComplemento(editora));
+		assertTrue(dao.validarComplemento(editora));
 
 		editora.setComplemento("AB");
 		assertFalse(dao.validarComplemento(editora));
@@ -225,7 +225,7 @@ public class UC02Editora
 		Editora editora = criarEditora();
 
 		editora.setTelefone("");
-		assertFalse(dao.validarTelefone(editora));
+		assertTrue(dao.validarTelefone(editora));
 
 		editora.setTelefone("1234567");
 		assertFalse(dao.validarTelefone(editora));
@@ -243,7 +243,7 @@ public class UC02Editora
 		Editora editora = criarEditora();
 
 		editora.setEmail("");
-		assertFalse(dao.validarEmail(editora));
+		assertTrue(dao.validarEmail(editora));
 
 		editora.setEmail("ABCDEF");
 		assertFalse(dao.validarEmail(editora));

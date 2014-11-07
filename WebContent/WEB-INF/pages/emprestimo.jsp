@@ -1,37 +1,29 @@
-ï»¿<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>EmprÃ©stimo</title>
-</head>
-<body>
-	<form>
-		<table>
-			<tr>
-				<td>CÃ³digo</td>
-				<td><input type="text" name="txtCodigo" value="" /></td>
-			</tr>
-			<tr>
-				<td>RA/RG do aluno</td>
-				<td><input type="text" name="txtRArg" value="" />
-				<td><input type="checkbox"></td>
-			</tr>
-			<tr>
-				<td>Tombo</td>
-				<td><input type="text" name="txtTombo" value="" /></td>
-			</tr>
-			<tr>
-				<td>EmprÃ©stimo:</td>
-				<td>DevoluÃ§Ã£o:</td>
-			</tr>
-		</table>
+
+	<form class="formdmd aligned" action="Control" method="post">
+		<fieldset>
+			<ul>
+				<li class="group">
+					<label>Código</label>
+					<input type="text" name="txtCodigo" value=""/>
+				</li>
+				<li class="group">
+					<label>RA/RG do aluno</label>
+					<input type="text" name="txtRArg" value="" />
+					<input type="checkbox"></label>
+				</li>
+				<li class="group">
+					<label>Tombo</label>
+					<input type="text" name="txtTombo" value=""/>
+				</li>
+				<li class="group">
+					<label>Empréstimo:</label>
+					<label>Devolução:</label>
+				</li>
+			</ul>
+		</fieldset>
 		<input type="submit" name="cmd" value="Adicionar" /> <input
-			type="submit" name="cmd" value="DevoluÃ§Ã£o" /> <input type="submit"
+			type="submit" name="cmd" value="Devolução" /> <input type="submit"
 			name="cmd" value="Voltar" /> <input type="submit" name="cmd"
 			value="Limpar" />
 
 	</form>
-</body>
-</html>

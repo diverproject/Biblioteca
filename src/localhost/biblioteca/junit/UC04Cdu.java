@@ -33,7 +33,7 @@ public class UC04Cdu
 	{
 		Cdu cdu = criarCdu();
 
-		assertTrue(dao.truncar());
+//		assertTrue(dao.truncar());
 
 		int id = dao.proximo();
 		cdu.setId(id);

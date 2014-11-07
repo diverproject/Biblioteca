@@ -20,9 +20,9 @@ public class UC05Obra
 	private Obra criarCdu()
 	{
 		return new Obra()
-		.setTitulo("O alfaiate de Ulm")
-		.setCidade("Uma possível história do Partido Comunista Italiano")
-		.setCidade("Roma")
+		.setTitulo("Titulo")
+		.setSubtitulo("Subtítulo")
+		.setCidade("Cidade")
 		.setEdicao(1)
 		.setAno(2014)
 		.setEditora(1)
@@ -40,7 +40,7 @@ public class UC05Obra
 	{
 		Obra obra = criarCdu();
 
-		assertTrue(dao.truncar());
+//		assertTrue(dao.truncar());
 
 		int id = dao.proximo();
 		obra.setId(id);

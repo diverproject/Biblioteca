@@ -9,7 +9,9 @@ import org.junit.runners.Suite.SuiteClasses;
 ({
 	UC01Usuario.class,
 	UC02Editora.class,
-	UC03Autor.class
+	UC03Autor.class,
+	UC04Cdu.class,
+	UC05Obra.class
 })
 public class UCUnit
 {

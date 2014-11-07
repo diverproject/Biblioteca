@@ -1,36 +1,27 @@
-ï»¿<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Curso</title>
-</head>
-<body>
-<form>
-		<table>
-			<tr>
-				<td>CÃ³digo</td>
-				<td><input type="text" name="txtCodigo" value="" /></td>
-			</tr>			
-			<tr>
-				<td>Curso</td>
-				<td><input type="text" name="txtCurso" value="" /></td>
-			</tr>
-			<tr>
-				<td>Sigla</td>
-				<td><input type="text" name="txtSigla" value="" /></td>
-			</tr>
-			<tr>
-				<td>AbreviaÃ§Ã£o</td>
-				<td><input type="text" name="txtAbreviacao" value="" /></td>
-			</tr>			
-		</table>
+	<form class="formdmd aligned" action="Control" method="post">
+		<fieldset>
+			<ul>
+				<li class="group">
+					<label>Código</label>
+					<input type="text" name="txtCodigo" value=""/>
+				</li>			
+				<li class="group">
+					<label>Curso</label>
+					<input type="text" name="txtCurso" value=""/>
+				</li>
+				<li class="group">
+					<label>Sigla</label>
+					<input type="text" name="txtSigla" value=""/>
+				</li>
+				<li class="group">
+					<label>Abreviação</label>
+					<input type="text" name="txtAbreviacao" value=""/>
+				</li>			
+			</ul>
+		</fieldset>
 		<input type="submit" name="cmd" value="Adicionar" /> <input
 			type="submit" name="cmd" value="Salvar" /> <input type="submit"
 			name="cmd" value="Voltar" /> <input type="submit" name="cmd"
 			value="Limpar" />
 
 	</form>
-</body>
-</html>

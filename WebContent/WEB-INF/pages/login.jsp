@@ -1,7 +1,7 @@
 <%
 	Object object = session.getAttribute("logged");
 
-	if (object instanceof Boolean && (boolean) object)
+	if (object instanceof Boolean && (Boolean) object)
 		return;
 %>
 	<form class="formdmd aligned" action="Control" method="post">

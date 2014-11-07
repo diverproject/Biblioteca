@@ -43,13 +43,16 @@ public class Biblioteca
 			message += erro((String) request.getAttribute("error"));
 
 		if (request.getAttribute("exception") != null)
-			exception((String) request.getAttribute("exception"));
+			message += exception((String) request.getAttribute("exception"));
 
 		if (request.getAttribute("success") != null)
-			sucesso((String) request.getAttribute("success"));
+			message += sucesso((String) request.getAttribute("success"));
 
 		if (request.getAttribute("instanceof") != null)
-			info((String) request.getAttribute("instanceof"));
+			message += info((String) request.getAttribute("instanceof"));
+
+		if (request.getAttribute("info") != null)
+			message += info((String) request.getAttribute("info"));
 
 		return message;
 	}

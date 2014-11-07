@@ -26,7 +26,7 @@ public class Editora
 		boolean ok = true;
 		String sid = request.getParameter("id");
 
-		if (sid == null)
+		if (sid == null || sid.length() == 0)
 			ok = false;
 
 		else

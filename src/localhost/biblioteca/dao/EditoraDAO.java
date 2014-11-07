@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -157,6 +159,9 @@ public class EditoraDAO extends AbstractDao<Editora>
 		if (editora.getTelefone() == null)
 			return true;
 
+		if (editora.getTelefone() == "")
+			return false;
+
 		if (editora.getTelefone().length() < 8)
 			return false;
 
@@ -174,6 +179,9 @@ public class EditoraDAO extends AbstractDao<Editora>
 	{
 		if (editora.getEmail() == null)
 			return true;
+
+		if (editora.getEmail() == "")
+			return false;
 
 		if (editora.getEmail().split("@").length != 2)
 			return false;
@@ -318,9 +326,11 @@ public class EditoraDAO extends AbstractDao<Editora>
 			return ps.executeUpdate() != PreparedStatement.EXECUTE_FAILED;
 
 		} catch (SQLException e) {
+			System.out.println(e.getMessage());
 			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
 			return false;
 		} catch (ClassNotFoundException e) {
+			System.out.println(e.getMessage());
 			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
 			return false;
 		}
@@ -397,7 +407,7 @@ public class EditoraDAO extends AbstractDao<Editora>
 			.setNumero(result.getString("numero"))
 			.setComplemento(result.getString("complemento"))
 			.setBairro(result.getString("bairro"))
-			.setCidade(result.getString("bairro"))
+			.setCidade(result.getString("cidade"))
 			.setUf(result.getString("uf"))
 			.setCep(result.getString("cep"))
 			.setTelefone(result.getString("telefone"))
@@ -502,5 +512,49 @@ public class EditoraDAO extends AbstractDao<Editora>
 			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
 			return true;
 		}
+	}
+
+	public List<Editora> listar()
+	{
+		List<Editora> lista = new ArrayList<Editora>();
+
+		try {
+
+			Sql sql = new Mysql();
+			Connection connection = sql.getConnection();
+
+			String query = "SELECT * FROM editoras";
+			PreparedStatement ps = connection.prepareStatement(query);
+
+			ResultSet result = ps.executeQuery();
+
+			if (!result.next())
+				return lista;
+
+			while (result.next())
+			{
+				Editora editora = new Editora()
+				.setId(result.getInt("id"))
+				.setNome(result.getString("nome"))
+				.setLogradouro(result.getString("logradouro"))
+				.setNumero(result.getString("numero"))
+				.setComplemento(result.getString("complemento"))
+				.setBairro(result.getString("bairro"))
+				.setCidade(result.getString("cidade"))
+				.setUf(result.getString("uf"))
+				.setCep(result.getString("cep"))
+				.setTelefone(result.getString("telefone"))
+				.setEmail(result.getString("email"));
+
+				lista.add(editora);
+			}
+
+		} catch (SQLException e) {
+			Biblioteca.alert(request, "exception", "SQLException (%s)", e.getMessage());
+		} catch (ClassNotFoundException e) {
+			Biblioteca.alert(request, "exception", "ClassNotFoundException (%s)", e.getMessage());
+		}
+
+		return lista;
 	}
 }
